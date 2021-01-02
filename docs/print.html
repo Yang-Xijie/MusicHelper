@@ -168,9 +168,24 @@
                         <h1><a class="header" href="#test" id="test">Test</a></h1>
 <p>[toc]</p>
 <h1><a class="header" href="#applescript-learning-201113" id="applescript-learning-201113">applescript learning 201113</a></h1>
-<p><a href="https://256stuff.com/gray/docs/misc/itunes_applescript_commands/">最开始启蒙我的一篇blog</a>，本来想找文档的，结果这个人告诉我poorly documentated，那就不找了，看第三方的文档就行
-<a href="http://alvinalexander.com/apple/itunes-applescript-examples-scripts-mac-reference/">iTunes AppleScript examples (command examples)</a>
-<a href="https://dougscripts.com/itunes/itinfo/info01.php">iTunes &amp; AppleScript Basics </a></p>
+<p><a href="https://256stuff.com/gray/docs/misc/itunes_applescript_commands/">最开始启蒙我的一篇blog</a>，本来想找文档的，结果这个人告诉我poorly documentated，那就不找了，看第三方的文档就行</p>
+<p><a href="http://alvinalexander.com/apple/itunes-applescript-examples-scripts-mac-reference/">iTunes AppleScript examples (command examples)</a></p>
+<p><a href="https://dougscripts.com/itunes/itinfo/info01.php">iTunes &amp; AppleScript Basics </a></p>
+<pre><code class="language-applescript">tell application &quot;Music&quot;
+	previous track
+	
+	if (album of current track) ≠ &quot; &quot; then
+		set name_album to (name of current track) &amp; &quot; - &quot; &amp; (album of current track)
+	else
+		set name_album to (name of current track)
+		if (artist of current track) ≠ &quot; &quot; then
+			set name_album to (name of current track) &amp; &quot; - &quot; &amp; (artist of current track)
+		end if
+	end if
+	
+	--display notification name_album with title &quot;􀊉&quot; subtitle &quot;Music Helper&quot;
+end tell
+</code></pre>
 <h1><a class="header" href="#about" id="about">About</a></h1>
 
                     </main>
